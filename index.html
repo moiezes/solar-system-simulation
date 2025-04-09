@@ -4,14 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solar System Simulation</title>
-  <meta name="description" content="Explore a real-time animation of the solar system showing how Earth and other planets revolve around the sun. Educational and interactive!" />
+  <meta name="description" content="An interactive solar system simulation showing how planets, including Earth, revolve around the Sun. Built with HTML, CSS, and JavaScript.">
+  <meta name="keywords" content="solar system simulation, earth revolution, planet orbit, space animation, HTML CSS JavaScript project, interactive space model">
+  <meta name="author" content="Abdul Moiz">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta property="og:title" content="Solar System Simulation">
+  <meta property="og:description" content="A visual and interactive model of Earth's revolution and other planets in motion.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moiezes.github.io/solar-system-simulation/">
+  <meta property="og:image" content="https://moiezes.github.io/solar-system-simulation/images/solar-system-simulation.png">
+
   <link rel="stylesheet" href="style.css" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: black;
       color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header, footer {
@@ -31,13 +46,39 @@
       text-decoration: underline;
     }
 
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+      gap: 20px;
+    }
+    /*
+    .side-ad {
+      width: 160px;
+      height: 600px;
+      background-color: #2a2a2a;
+      border: 1px dashed #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ccc;
+      font-size: 14px;
+    }*/
+
+    .content-column {
+      flex: 1;
+      max-width: 800px;
+    }
+
     .solar-system {
       position: relative;
-      width: 90vw;
-      height: 90vw;
+      width: 100%;
       max-width: 500px;
-      max-height: 500px;
-      margin: 40px auto;
+      aspect-ratio: 1 / 1;
+      margin: 20px auto;
     }
 
     .sun {
@@ -80,63 +121,83 @@
     .neptune { width: 22px; height: 22px; background-color: darkblue; }
 
     .feedback-section {
-      max-width: 700px;
+      width: 100%;
       margin: 40px auto;
       padding: 20px;
       background-color: #1e1e1e;
       border-radius: 10px;
     }
 
-    .feedback-section h2 {
+    .feedback-section h2,
+    .feedback-section p {
       text-align: center;
     }
 
     footer {
       margin-top: 40px;
     }
+
+    @media (max-width: 992px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+      /*
+      .side-ad {
+        display: none;
+      }
+        */
+    }
   </style>
 </head>
 <body>
   <header>
+    <h1>Interactive Solar System Simulation</h1>
     <nav>
       <a href="/index.html">Home</a>
-      <a href="/about.html">About</a>
       <a href="/blog/">Blog</a>
       <a href="/faq.html">FAQ</a>
       <a href="/feedback.html">Feedback</a>
+      <a href="/about.html">About</a>
       <a href="/sitemap.html">Sitemap</a>
     </nav>
   </header>
 
   <main>
-    <section class="solar-system">
-      <div class="sun"></div>
-    </section>
+    <!--div class="side-ad">Ad Space (Left)</div-->
 
-    <section class="feedback-section">
-      <h2>How do you like this simulation?</h2>
-      <p style="text-align: center;">Leave your thoughts below — we’d love to hear from you!</p>
+    <div class="content-column">
+      <div class="solar-system">
+        <div class="sun"></div>
+      </div>
 
-    <script src="https://giscus.app/client.js"
-      data-repo="moiezes/solar-system-simulation"
-      data-repo-id="R_kgDOOWFNqg"
-      data-category="General"
-      data-category-id="DIC_kwDOOWFNqs4Co5XH"
-      data-mapping="pathname"
-      data-strict="0"
-      data-reactions-enabled="1"
-      data-emit-metadata="0"
-      data-input-position="top"
-      data-theme="dark_dimmed"
-      data-lang="en"
-      crossorigin="anonymous"
-      async>
-    </script>
-    </section>
+      <section class="feedback-section">
+        <h2>How do you like this simulation?</h2>
+        <p>Leave your thoughts below — we’d love to hear from you!</p>
+
+        <script src="https://giscus.app/client.js"
+          data-repo="moiezes/solar-system-simulation"
+          data-repo-id="R_kgDOOWFNqg"
+          data-category="General"
+          data-category-id="DIC_kwDOOWFNqs4Co5XH"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="dark_dimmed"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </section>
+    </div>
+
+    <!--div class="side-ad">Ad Space (Right)</div-->
   </main>
 
   <footer>
-    <p>&copy; 2025 Earth Revolution. All rights reserved.</p>
+    <p>&copy; 2025 Solar System Simulation | <a href="about.html" style="color: lightblue;">About Us</a></p>
   </footer>
 
   <script>
