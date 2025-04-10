@@ -49,46 +49,33 @@
     main {
       flex: 1;
       display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 20px;
-      gap: 20px;
-    }
-    /*
-    .side-ad {
-      width: 160px;
-      height: 600px;
-      background-color: #2a2a2a;
-      border: 1px dashed #555;
-      display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      color: #ccc;
-      font-size: 14px;
-    }*/
+      padding: 20px;
+    }
 
     .content-column {
-      flex: 1;
+      width: 100%;
       max-width: 800px;
+      padding: 0 15px;
     }
 
     .solar-system {
       position: relative;
       width: 100%;
       max-width: 500px;
-      aspect-ratio: 1 / 1;
       margin: 20px auto;
+      padding-top: 100%; /* creates a square using padding hack */
     }
 
     .sun {
       position: absolute;
-      top: 50%;
-      left: 50%;
       width: 60px;
       height: 60px;
       background-color: yellow;
       border-radius: 50%;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
       box-shadow: 0 0 20px yellow;
     }
@@ -97,6 +84,9 @@
       position: absolute;
       border-radius: 50%;
       border: 1px dashed rgba(255, 255, 255, 0.4);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .planet {
@@ -136,18 +126,6 @@
     footer {
       margin-top: 40px;
     }
-
-    @media (max-width: 992px) {
-      main {
-        flex-direction: column;
-        align-items: center;
-      }
-      /*
-      .side-ad {
-        display: none;
-      }
-        */
-    }
   </style>
 </head>
 <body>
@@ -155,17 +133,15 @@
     <h1>Interactive Solar System Simulation</h1>
     <nav>
       <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
       <a href="/blog/">Blog</a>
       <a href="/faq.html">FAQ</a>
       <a href="/feedback.html">Feedback</a>
-      <a href="/about.html">About</a>
       <a href="/sitemap.html">Sitemap</a>
     </nav>
   </header>
 
   <main>
-    <!--div class="side-ad">Ad Space (Left)</div-->
-
     <div class="content-column">
       <div class="solar-system">
         <div class="sun"></div>
@@ -192,8 +168,6 @@
         </script>
       </section>
     </div>
-
-    <!--div class="side-ad">Ad Space (Right)</div-->
   </main>
 
   <footer>
@@ -223,8 +197,9 @@
 
     let angles = planets.map(() => Math.random() * Math.PI * 2);
     function rotate() {
-      const centerX = system.clientWidth / 2;
-      const centerY = system.clientHeight / 2;
+      const systemBox = system.getBoundingClientRect();
+      const centerX = systemBox.width / 2;
+      const centerY = systemBox.height / 2;
 
       planets.forEach((planet, i) => {
         angles[i] += planet.speed;
