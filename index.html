@@ -126,6 +126,28 @@
     footer {
       margin-top: 40px;
     }
+    @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .solar-system {
+      margin-top: 60px;
+      transform: scale(0.85);
+      transform-origin: top center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    nav a {
+      font-size: 1rem;
+    }
+  }
   </style>
 </head>
 <body>
@@ -133,10 +155,10 @@
     <h1>Interactive Solar System Simulation</h1>
     <nav>
       <a href="/index.html">Home</a>
-      <a href="/about.html">About</a>
       <a href="/blog/">Blog</a>
-      <a href="/faq.html">FAQ</a>
       <a href="/feedback.html">Feedback</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">About</a>
       <a href="/sitemap.html">Sitemap</a>
     </nav>
   </header>
