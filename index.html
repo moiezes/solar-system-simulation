@@ -14,7 +14,6 @@
   <meta property="og:url" content="https://moiezes.github.io/solar-system-simulation/">
   <meta property="og:image" content="https://moiezes.github.io/solar-system-simulation/images/solar-system-simulation.png">
 
-  <link rel="stylesheet" href="style.css" />
   <style>
     * {
       box-sizing: border-box;
@@ -27,6 +26,7 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     header, footer {
@@ -44,6 +44,11 @@
 
     nav a:hover {
       text-decoration: underline;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     main {
@@ -64,8 +69,11 @@
       position: relative;
       width: 100%;
       max-width: 500px;
+      /* use aspect-ratio to maintain a perfect square */
+      aspect-ratio: 1 / 1;
       margin: 20px auto;
-      padding-top: 100%; /* creates a square using padding hack */
+      /* allow planets and labels at edges to remain visible */
+      overflow: visible;
     }
 
     .sun {
@@ -135,8 +143,12 @@
 
     .solar-system {
       margin-top: 60px;
-      transform: scale(0.85);
-      transform-origin: top center;
+      /* Scale simulation for smaller screens */
+      width: 90vw;
+      max-width: 90vw;
+      aspect-ratio: 1 / 1;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     header h1 {
@@ -208,10 +220,12 @@
       { id: "neptune", radius: 260, speed: 0.002 }
     ];
 
+    const maxRadius = Math.max(...planets.map(p => p.radius));
     const system = document.querySelector(".solar-system");
     planets.forEach(p => {
+      const sizePercent = (p.radius / maxRadius) * 100;
       system.innerHTML += `
-        <div class="orbit" style="width:${p.radius * 2}px; height:${p.radius * 2}px; top:50%; left:50%; transform:translate(-50%,-50%)"></div>
+        <div class="orbit" style="width:${sizePercent}%; height:${sizePercent}%; top:50%; left:50%; transform:translate(-50%,-50%)"></div>
         <div class="planet ${p.id}" id="${p.id}"></div>
         <div class="label" id="${p.id}-label">${p.id.charAt(0).toUpperCase() + p.id.slice(1)}</div>
       `;
@@ -225,12 +239,17 @@
 
       planets.forEach((planet, i) => {
         angles[i] += planet.speed;
-        const x = centerX + planet.radius * Math.cos(angles[i]);
-        const y = centerY + planet.radius * Math.sin(angles[i]);
+        const relRadius = (planet.radius / maxRadius) * centerX;
+        const x = centerX + relRadius * Math.cos(angles[i]);
+        const y = centerY + relRadius * Math.sin(angles[i]);
         const el = document.getElementById(planet.id);
         const label = document.getElementById(`${planet.id}-label`);
-        el.style.left = `${x}px`;
-        el.style.top = `${y}px`;
+        // Position planet so its center follows the circular path
+        const elWidth = el.offsetWidth;
+        const elHeight = el.offsetHeight;
+        el.style.left = `${x - elWidth / 2}px`;
+        el.style.top = `${y - elHeight / 2}px`;
+        // Position label relative to planet center (offset as desired)
         label.style.left = `${x + 15}px`;
         label.style.top = `${y - 15}px`;
       });
