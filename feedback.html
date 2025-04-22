@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback | Solar System Simulation</title>
+  <meta name="description" content="Leave your feedback for the Solar System Simulation. We’d love to hear your thoughts!" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background-color: black; color: white; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
+    header, footer { background-color: #111; padding: 10px 20px; text-align: center; }
+    nav a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    nav { display: flex; justify-content: center; align-items: center; }
+    main { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+    .content-column { width: 100%; max-width: 800px; padding: 0 15px; }
+    .feedback-section { width: 100%; margin: 40px auto; padding: 20px; background-color: #1e1e1e; border-radius: 10px; }
+    .feedback-section h2, .feedback-section p { text-align: center; }
+    @media (max-width: 768px) { nav { flex-direction: column; gap: 10px; margin-top: 10px; } header h1 { font-size: 1.8rem; text-align: center; } nav a { font-size: 1rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Interactive Solar System Simulation</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog/">Blog</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="sitemap.html">Sitemap</a>
+    </nav>
+  </header>
+  <main>
+    <div class="content-column">
+      <section class="feedback-section">
+        <h2>How do you like this simulation?</h2>
+        <p>Leave your thoughts below — we’d love to hear from you!</p>
+        <script src="https://giscus.app/client.js"
+          data-repo="moiezes/solar-system-simulation"
+          data-repo-id="R_kgDOOWFNqg"
+          data-category="General"
+          data-category-id="DIC_kwDOOWFNqs4Co5XH"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="dark_dimmed"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Solar System Simulation | <a href="about.html" style="color: lightblue;">About Us</a></p>
+  </footer>
+</body>
+</html>
