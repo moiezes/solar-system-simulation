@@ -6,13 +6,29 @@
   <title>Solar System Simulation</title>
   <meta name="description" content="An interactive solar system simulation showing how planets, including Earth, revolve around the Sun. Built with HTML, CSS, and JavaScript.">
   <meta name="keywords" content="solar system simulation, earth revolution, planet orbit, space animation, HTML CSS JavaScript project, interactive space model">
-  <meta name="author" content="Abdul Moiz">
+  <meta name="author" content="Abdul Moiez">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <meta property="og:title" content="Solar System Simulation">
   <meta property="og:description" content="A visual and interactive model of Earth's revolution and other planets in motion.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://moiezes.github.io/solar-system-simulation/">
   <meta property="og:image" content="https://moiezes.github.io/solar-system-simulation/images/solar-system-simulation.png">
+  <!-- SEO: canonical URL, Twitter Card, and JSON-LD for structured data -->
+  <link rel="canonical" href="https://moiezes.github.io/solar-system-simulation/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Interactive Solar System Simulation" />
+  <meta name="twitter:description" content="An interactive solar system simulation showing how planets, including Earth, revolve around the Sun." />
+  <meta name="twitter:image" content="https://moiezes.github.io/solar-system-simulation/images/solar-system-simulation.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Interactive Solar System Simulation",
+    "description": "An interactive solar system simulation showing how planets, including Earth, revolve around the Sun.",
+    "url": "https://moiezes.github.io/solar-system-simulation/",
+    "image": "https://moiezes.github.io/solar-system-simulation/images/solar-system-simulation.png"
+  }
+  </script>
 
   <style>
     * {
@@ -168,13 +184,26 @@
       font-size: 1rem;
     }
   }
+    /* Responsive layout for solar system content */
+    .solar-system-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+    .solar-system-content img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Interactive Solar System Simulation</h1>
     <nav>
-      <a href="https://www.solarsystemsimulation.com">Home</a>
+      <a href="index.html">Home</a>
       <a href="blog/">Blog</a>
       <a href="feedback.html">Feedback</a>
       <a href="faq.html">FAQ</a>
@@ -184,10 +213,76 @@
   </header>
 
   <main>
-    <div class="solar-wrapper">
+    <div id="solar-system-simulation" class="solar-wrapper">
       <div class="solar-system">
         <div class="sun"></div>
       </div>
+    </div>
+
+    <div class="content-column">
+      <section class="solar-system-content">
+          <h1>How the Solar System Works?</h1>
+          <p>Welcome to <strong>SolarSystemSimulation.com</strong> — your interactive guide to understanding how the solar system works! This website is designed to help students, teachers, and space enthusiasts of all ages explore the fascinating motion of the planets, moons, and other celestial bodies through a fun and educational solar system simulation.</p>
+
+          <img loading="lazy" decoding="async" src="images/sun-and-orbiting-planets.webp" alt="Sun and planets orbiting" />
+
+          <h2>What Is the Solar System?</h2>
+          <p>The <strong>solar system</strong> is a collection of celestial bodies bound by gravity, with the <strong>Sun at the center</strong>. It includes <strong>eight planets</strong>, more than 200 known <strong>moons</strong>, countless <strong>asteroids</strong>, and icy <strong>comets</strong>. Everything moves in space, and understanding these movements helps us understand time, seasons, gravity, and the formation of worlds.</p>
+
+          <!-- <img loading="lazy" decoding="async" src="path-to-your-image/planets-in-order.jpg" alt="Planets in order from the Sun" /> [Picture: Illustration of planets and their orbits] -->
+
+          <h2>Why Do Planets Orbit the Sun?</h2>
+          <p>The planets orbit the Sun because of <strong>gravity</strong>. The Sun is incredibly massive — about 99.8% of the total mass of the entire solar system. This mass gives it the gravitational pull needed to keep planets, moons, and other objects in orbit. Each planet follows an elliptical path around the Sun, taking a different amount of time to complete one full orbit. For example, Earth takes 365 days, while Neptune takes 165 years!</p>
+
+          <!-- <img loading="lazy" decoding="async" src="path-to-your-image/orbit-motion.jpg" alt="Earth orbiting the Sun" /> [Picture: Earth's orbit path with motion arrows] -->
+
+          <h2>What Else Is in the Solar System?</h2>
+          <p>Besides planets, the solar system is filled with interesting objects:
+            <ul>
+              <li><strong>Moons:</strong> Natural satellites like our Moon, or Jupiter’s 90+ moons.</li>
+              <li><strong>Asteroids:</strong> Rocky objects, mostly in the asteroid belt between Mars and Jupiter.</li>
+              <li><strong>Comets:</strong> Icy objects with tails that glow when they approach the Sun.</li>
+              <li><strong>Dwarf planets:</strong> Smaller planetary bodies like Pluto and Ceres.</li>
+            </ul>
+          </p>
+
+          <!-- <img loading="lazy" decoding="async" src="path-to-your-image/moon-asteroid-comet.jpg" alt="Moon, asteroid, and comet" /> [Picture: Moon, asteroid belt, and comet] -->
+
+          <h2>How Gravity Keeps the Solar System Moving</h2>
+          <p>Gravity acts like an invisible glue, pulling objects toward each other. The Sun’s gravity keeps all planets and moons in motion, creating a balanced system where everything spins and orbits in a grand cosmic dance. Without gravity, the solar system wouldn’t exist as we know it.</p>
+
+          <!-- <img loading="lazy" decoding="async" src="path-to-your-image/gravity-illustration.jpg" alt="Illustration of gravity between Sun and planets" /> [Picture: Gravity visual with Sun and orbiting planets] -->
+
+          <h2>Explore the Solar System in Real Time</h2>
+          <p>Use our real-time <strong>solar system simulation</strong> to visualize orbits, planetary positions, and motions dynamically. It’s perfect for science homework, classroom demos, or just satisfying your space curiosity.</p>
+
+          <a href="#solar-system-simulation">Click here to see the Solar System Simulation</a>
+
+          <h2>Fun Facts About the Solar System</h2>
+          <ul>
+            <li>The Sun is over 100 times wider than Earth.</li>
+            <li>Jupiter has a storm larger than Earth called the Great Red Spot.</li>
+            <li>Venus spins in the opposite direction compared to most planets.</li>
+            <li>Uranus rotates on its side like a rolling ball.</li>
+            <li>Comets come from regions far beyond Pluto called the Kuiper Belt and Oort Cloud.</li>
+          </ul>
+
+          <h2>Frequently Asked Questions (FAQs)</h2>
+          <h3>Q: What is the solar system made of?</h3>
+          <p>A: The solar system consists of the Sun, eight planets, moons, asteroids, comets, dwarf planets, and interplanetary dust and gases.</p>
+
+          <h3>Q: What makes planets orbit the Sun?</h3>
+          <p>A: The Sun’s gravity pulls the planets toward it, but their forward momentum keeps them in orbit instead of falling in.</p>
+
+          <h3>Q: How long does Earth take to orbit the Sun?</h3>
+          <p>A: Earth completes one full orbit in 365.25 days, which forms the basis of a year.</p>
+
+          <h3>Q: Can I see other planets without a telescope?</h3>
+          <p>A: Yes! Venus, Mars, Jupiter, and Saturn are often visible to the naked eye at night.</p>
+
+          <h2>Stay Curious, Stay Exploring!</h2>
+          <p>SolarSystemSimulation.com is your window to the wonders of space. Dive into our simulation, share it with friends and classmates, and keep learning about the universe above us. The journey never ends!</p>
+      </section>
     </div>
 
     <div class="content-column">
